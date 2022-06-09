@@ -1,0 +1,47 @@
+version: '3.7'
+
+services:
+  
+  customer-service:
+    image: customer-service
+    container_name: customer-service
+    build:
+      context: customer-service
+    ports:
+      - "8004:8004"
+    restart: on-failure
+    env_file:
+      - env/application-customer.properties
+    networks:
+      - capgemini-app-network
+
+  account-service:
+    image: account-service
+    container_name: account-service
+    build:
+      context: account-service
+    ports:
+      - "8005:8005"
+    depends_on:
+      - customer-service
+    env_file:
+      - env/application-account.properties
+    restart: on-failure
+    networks:
+      - capgemini-app-network
+
+  transaction-service:
+    image: transaction-service
+    container_name: transaction-service
+    build:
+      context: transaction-service
+    depends_on:
+      - customer-service
+    env_file:
+      - env/application-transaction.properties
+    restart: on-failure
+    networks:
+      - capgemini-app-network
+
+networks:
+  capgemini-app-network:
