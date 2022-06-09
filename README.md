@@ -1,10 +1,10 @@
 # capgemini-microservice
 
 # Content
-- [ About }
-- [ Getting Started ]
-- [ Usage ]
-- [ Scope ]
+- [About]
+- [Getting Started]
+- [Usage]
+- [Scope]
 # About
 A simple project to demonstrate how micro-services can communicate and share data between each other.
 
