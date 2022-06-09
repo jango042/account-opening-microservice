@@ -1,0 +1,9 @@
+[submodule "transaction-service"]
+	path = transaction-service
+	url = https://github.com/jango042/transaction-service.git
+[submodule "account-service"]
+	path = account-service
+	url = https://github.com/jango042/account-service.git
+[submodule "customer-service"]
+	path = customer-service
+	url = https://github.com/jango042/customer-service.git
